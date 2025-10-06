@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <div className="mainMargin">
       <div className="flex flex-wrap justify-between items-center p-10 bg-black mt-10 rounded-3xl">
-        <div className="bolded text-3xl xsm:text-4xl text-white mb-10 max-w-[600px]">STAY UPTO DATE ABOUT OUR LATEST OFFERS</div>
+        <div className="bolded text-3xl xsm:text-4xl text-white mb-10 max-w-[600px]">FRESH FROM THE OVEN — JOIN OUR NEWSLETTER</div>
         <form className="flex flex-col gap-5 flex-grow" action="">
           <div className="rounded-3xl bg-white p-2 flex w-full">
             <MdOutlineEmail size={25}/>
@@ -22,9 +22,8 @@ export default function Footer() {
       <footer>
         <div className="flex flex-wrap justify-between mt-10 gap-10">
           <div className="flex-grow flex flex-col gap-10">
-            <h1 className="bolded text-3xl">SHOP.CO</h1>
-            <p className="max-w-72">We have clothes that suits your style and
-               which you’re proud to wear. From women to men.</p>
+            <h1 className="bolded text-3xl">MAXIPAN</h1>
+            <p className="max-w-72">Panadería y pastelería artesanal. Panes, pasteles, empanadas y más, horneados todo el día.</p>
             <div className="flex gap-5">
               <FaXTwitter size={25}/>
               <FaFacebook size={25}/>
@@ -36,7 +35,7 @@ export default function Footer() {
             <h1 className="font-semibold -ml-20">Company</h1>
             <ul className="flex flex-col gap-5">
               <li className="Links">About</li>
-              <li className="Links">Features of SHOP.CO</li>
+              <li className="Links">Our Bakeries</li>
               <li className="Links">Works</li>
               <li className="Links">Career</li>
             </ul>
@@ -62,16 +61,16 @@ export default function Footer() {
           <div className="flex-grow flex gap-5 flex-col justify-center items-center"> 
             <h1 className="font-semibold -ml-20">Resources</h1>
             <ul className="flex flex-col gap-5">
-              <li className="Links">Free eBooks</li>
-              <li className="Links">Development Tutorial</li>
-              <li className="Links">How to - Blog</li>
-              <li className="Links">Youtube Playlist</li>
+              <li className="Links">Catering & Events</li>
+              <li className="Links">Allergens & Nutrition</li>
+              <li className="Links">Wholesale</li>
+              <li className="Links">Press</li>
             </ul>
           </div>
         </div>
         <div className="flex justify-center mt-10 gap-y-5 border-t-4 items-center flex-wrap">
           <div className="flex-grow text-center md:text-left">
-            Shop.co © 2000-2024, All Rights Reserved
+            Maxipan © 2000-2024, All Rights Reserved
           </div>
           <div className="w-fit">
             <PaymentsLogos/>

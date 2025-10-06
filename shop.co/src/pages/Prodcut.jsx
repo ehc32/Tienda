@@ -75,9 +75,9 @@ export default function Prodcut() {
     <>
       
       <div className='flex my-5 mainMargin items-center gap-4'>
-        <Link to='/' className='text-gray-400'>Home</Link>
+        <Link to='/' className='text-gray-400'>Inicio</Link>
         <IoIosArrowForward color='gray'/>
-        <Link to='/Shop' className='text-gray-400'>Shop</Link>
+        <Link to='/Shop' className='text-gray-400'>Tienda</Link>
         <IoIosArrowForward color='gray'/>
         <p className=''>{MyProdcut.name}</p>
       </div>
@@ -91,7 +91,7 @@ export default function Prodcut() {
           <div>
             <div className='mt-10'></div>
             <hr />
-            <div className='absolute -translate-y-4 right-10 bg-white'>Select Colors</div>
+            <div className='absolute -translate-y-4 right-10 bg-white'>Selecciona color</div>
 
             <div className='flex flex-wrap gap-3 items-end h-24'>
               <motion.div 
@@ -139,28 +139,28 @@ export default function Prodcut() {
 
             <div className='mt-10'></div>
             <hr />
-            <div className='absolute -translate-y-4 right-10 bg-white'>Choose Size</div>
+            <div className='absolute -translate-y-4 right-10 bg-white'>Elige tamaño</div>
             <div className='flex flex-wrap gap-4 mt-10'>
               <motion.div 
                 initial={{opacity:0,x:-75}}
                 animate={{opacity:1,x:0}}
                 transition={{delay:0}} onClick={handleSizeChanges('Small')} 
-              className={`${Size==='Small'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Small</motion.div>
+              className={`${Size==='Small'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Pequeño</motion.div>
               <motion.div 
                 initial={{opacity:0,x:-75}}
                 animate={{opacity:1,x:0}}
                 transition={{delay:0.1}} onClick={handleSizeChanges('Medium')} 
-              className={`${Size==='Medium'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Medium</motion.div>
+              className={`${Size==='Medium'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Mediano</motion.div>
               <motion.div 
                 initial={{opacity:0,x:-75}}
                 animate={{opacity:1,x:0}}
                 transition={{delay:0.2}} onClick={handleSizeChanges('Large')} 
-              className={`${Size==='Large'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Large</motion.div>
+              className={`${Size==='Large'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Grande</motion.div>
               <motion.div 
                 initial={{opacity:0,x:-75}}
                 animate={{opacity:1,x:0}}
                 transition={{delay:0.3}} onClick={handleSizeChanges('X-Large')} 
-              className={`${Size==='X-Large'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>X-Large</motion.div>
+              className={`${Size==='X-Large'?'bg-black text-white':'bg-gray-100'} cursor-pointer py-2 px-5 rounded-full `}>Familiar</motion.div>
             </div>
             
             <div className='mt-10'></div>
@@ -181,13 +181,13 @@ export default function Prodcut() {
                 transition={{delay:0.3}}
                 className='flex-grow'
               >
-                <button onClick={handleSubmit} className='bg-black w-full text-white px-5 py-4 rounded-full flex-grow'>Add to Cart</button>
+                <button onClick={handleSubmit} className='bg-black w-full text-white px-5 py-4 rounded-full flex-grow'>Añadir al carrito</button>
               </motion.div>
             </div>
           </div>
         </div>
       </div>
-      <HomeSliders text='You might also like' type={MyProdcut.type} del='yes' id={MyProdcut.id} />
+      <HomeSliders text='Te puede interesar' type={MyProdcut.type} del='yes' id={MyProdcut.id} />
     </>
   )
 }

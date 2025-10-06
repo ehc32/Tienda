@@ -46,9 +46,10 @@ export default function Img({from='any',img,...prop}) {
     if(img==='Confirm')setMyImg(Confirm)
   },[prop.src])
 
+  const altText = prop.alt || (typeof img === 'string' ? img : 'Imagen');
   return (
     <div className={prop.className}>
-      <img draggable='false' className='w-full h-full' src={myImg} alt="" />
+      <img loading='lazy' draggable='false' className='w-full h-full' src={myImg} alt={altText} />
     </div>
   )
 }

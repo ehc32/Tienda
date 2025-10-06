@@ -109,20 +109,20 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
     filter:true
   }
   const initStyleCheckBox = {
-    cb1:queryParams.get('style')=='Casual'||false,
-    cb2:queryParams.get('style')=='Formal'||false,
-    cb3:queryParams.get('style')=='Party'||false,
-    cb4:queryParams.get('style')=='Gym'||false,
+    cb1:queryParams.get('style')=='Dulce'||false,
+    cb2:queryParams.get('style')=='Salado'||false,
+    cb3:false,
+    cb4:false,
   }
   const initTypeCheckBox = {
-    cb2:queryParams.get('type')=='T-shirts'||false,
-    cb3:queryParams.get('type')=='Shirts'||false,
-    cb4:queryParams.get('type')=='Jeans'||false,
-    cb5:queryParams.get('type')=='Shorts'||false,
+    cb2:queryParams.get('type')=='Pan'||false,
+    cb3:queryParams.get('type')=='Empanadas'||false,
+    cb4:queryParams.get('type')=='Pasteles'||false,
+    cb5:queryParams.get('type')=='Sándwiches'||false,
   }
   const initFillters = {
     type:queryParams.get('type') || '',
-    price:[parseInt(queryParams.get('min'))||0,parseInt(queryParams.get('max'))||500],
+    price:[parseInt(queryParams.get('min'))||0,parseInt(queryParams.get('max'))||50],
     colorsbg:queryParams.get('colorbg') || 0,
     style:queryParams.get('style') || ''
   }
@@ -145,7 +145,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
       navigate(`?${queryParams.toString()}`);
       setFilters({type:'style',value:''})
     }
-    const value = StyleCheckBox.cb1?'Casual':StyleCheckBox.cb2?'Formal':StyleCheckBox.cb3?'Party':StyleCheckBox.cb4?'Gym':'';
+    const value = StyleCheckBox.cb1?'Dulce':StyleCheckBox.cb2?'Salado':'';
     if(value)handleFiltersChange('style',value);
   },[StyleCheckBox])
 
@@ -155,7 +155,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
       navigate(`?${queryParams.toString()}`);
       setFilters({type:'type',value:''})
     }
-    const value = TypeCheckBox.cb2?'T-shirts':TypeCheckBox.cb3?'Shirts':TypeCheckBox.cb4?'Jeans':TypeCheckBox.cb5?'Shorts':'';
+    const value = TypeCheckBox.cb2?'Pan':TypeCheckBox.cb3?'Empanadas':TypeCheckBox.cb4?'Pasteles':TypeCheckBox.cb5?'Sándwiches':'';
     if(value)handleFiltersChange('type',value);
   },[TypeCheckBox])
 
@@ -218,7 +218,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
           <hr />
           <div className='flex flex-col gap-3'>
             <div className='flex justify-between cursor-pointer' onClick={()=>setArrows({type:'type'})}>
-              <p className='font-bold text-xl select-none'>Type</p>
+              <p className='font-bold text-xl select-none'>Categoría</p>
               <motion.div
                 animate={{rotate:!Arrows.type?180:0,y:!Arrows.type?-10:0}}
               ><MdKeyboardArrowUp /></motion.div>
@@ -226,19 +226,19 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
             {
               Arrows.type&&<div className='flex flex-col justify-between gap-5'>
               <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.05}} className='flex justify-between cursor-pointer'>
-                <p>T-shirts</p>
+                <p>Pan</p>
                 <input type="checkbox" checked={TypeCheckBox.cb2} onChange={()=>setTypeCheckBox({type:'cb2'})} />
               </motion.div>
               <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.06}} className='flex justify-between cursor-pointer'>
-                <p>Shirts</p>
+                <p>Empanadas</p>
                 <input type="checkbox" checked={TypeCheckBox.cb3} onChange={()=>setTypeCheckBox({type:'cb3'})} />
               </motion.div>
               <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.07}} className='flex justify-between cursor-pointer'>
-                <p>Jeans</p>
+                <p>Pasteles</p>
                 <input type="checkbox" checked={TypeCheckBox.cb4} onChange={()=>setTypeCheckBox({type:'cb4'})} />
               </motion.div>
               <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.08}} className='flex justify-between cursor-pointer'>
-                <p>Shorts</p>
+                <p>Sándwiches</p>
                 <input type="checkbox" checked={TypeCheckBox.cb5} onChange={()=>setTypeCheckBox({type:'cb5'})} />
               </motion.div></div>
             }
@@ -246,7 +246,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
           <hr />
           <div className=' flex-col gap-3'>
               <div className='flex justify-between cursor-pointer' onClick={()=>setArrows({type:'price'})}>
-                <p className='font-bold text-xl select-none'>Price</p>
+                <p className='font-bold text-xl select-none'>Precio</p>
                 <motion.div
                   animate={{rotate:!Arrows.price?180:0,y:!Arrows.price?-10:0}}
                 ><MdKeyboardArrowUp /></motion.div>
@@ -263,7 +263,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
                         trackClassName="example-track"
                         defaultValue={[Filters.price[0], Filters.price[1]]}
                         min={0}
-                        max={500}
+                        max={50}
                         ariaLabel={['Lower thumb', 'Upper thumb']}
                         ariaValuetext={state => `Thumb value ${state.valueNow}`}
                         renderThumb={(props, state) => <div {...props}>{state.valueNow}</div> }
@@ -274,12 +274,12 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
                   </motion.div>
                 }
                 <div onClick={()=>handleFiltersChange('price',PriceRange)} className='flex justify-center items-center'>
-                  <button className='btn flex justify-center items-center'>Aply</button>
+                  <button className='btn flex justify-center items-center'>Aplicar</button>
                 </div>
           </div>
           <div className=' flex-col gap-3'>
               <div className='flex justify-between cursor-pointer' onClick={()=>setArrows({type:'colors'})}>
-                <p className='font-bold text-xl select-none'>Colors</p>
+                <p className='font-bold text-xl select-none'>Colores</p>
                 <motion.div
                   animate={{rotate:!Arrows.colors?180:0,y:!Arrows.colors?-10:0}}
                 ><MdKeyboardArrowUp /></motion.div>
@@ -342,7 +342,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
           </div>
           <div className='flex justify-between flex-col gap-3'>
               <div className='flex justify-between cursor-pointer' onClick={()=>setArrows({type:'style'})}>
-                <p className='font-bold text-xl select-none'>Dress Style</p>
+                <p className='font-bold text-xl select-none'>Tipo</p>
                 <motion.div
                   animate={{rotate:!Arrows.style?180:0,y:!Arrows.style?-10:0}}
                 ><MdKeyboardArrowUp /></motion.div>
@@ -350,21 +350,14 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
                 <div>{
                   Arrows.style&&<div className='flex flex-col gap-5'>
                     <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.05}} className='flex justify-between cursor-pointer'>
-                      <div>Casual</div>
+                      <div>Dulce</div>
                       <input type="checkbox" checked={StyleCheckBox.cb1} onChange={()=>setStyleCheckBox({type:'cb1'})} />
                     </motion.div>
                     <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.06}}  className='flex justify-between cursor-pointer'>
-                      <div>Formal</div>
+                      <div>Salado</div>
                       <input type="checkbox" checked={StyleCheckBox.cb2} onChange={()=>setStyleCheckBox({type:'cb2'})} />
                     </motion.div>
-                    <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.07}}  className='flex justify-between cursor-pointer'>
-                      <div>Party</div>
-                      <input type="checkbox" checked={StyleCheckBox.cb3} onChange={()=>setStyleCheckBox({type:'cb3'})} />
-                    </motion.div>
-                    <motion.div initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:0.08}} className='flex justify-between cursor-pointer'>
-                      <div>Gym</div>
-                      <input type="checkbox" checked={StyleCheckBox.cb4} onChange={()=>setStyleCheckBox({type:'cb4'})} />
-                    </motion.div>
+                    
                   </div>
                 }</div>
           </div>
@@ -372,7 +365,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
         }
       </div>
       <div className='flex flex-col justify-center flex-grow flex-wrap gap-3 h-fit'>
-        <h1 className='ml-10 mt-5 text-3xl font-bold'>{Filters.type?Filters.type:'All'} {Filters.style?'->':''} {Filters.style}  </h1>
+        <h1 className='ml-10 mt-5 text-3xl font-bold'>{Filters.type?Filters.type:'Todos'} {Filters.style?'->':''} {Filters.style}  </h1>
           <div className='flex justify-center flex-grow flex-wrap gap-3 h-fit'>
             {
               Products.length?Products.map((el,index) => {
@@ -408,7 +401,7 @@ export default function ShowProductsByType({MyProducts,setMyProducts}) {
                     </motion.div>
                   </motion.div>
                 )
-              }):<h1 className='text-3xl mt-10 font-bold'>Sorry nothing here...</h1>
+              }):<h1 className='text-3xl mt-10 font-bold'>No hay resultados...</h1>
             }
           </div>
           

@@ -16,7 +16,7 @@ export default function HappyCustomers() {
 
   return (
     <div className='mainMargin pb-10 pt-20'>
-      <h1 className='bolded text-3xl xsm:text-5xl'>OUR HAPPY CUSTOMERS</h1>
+      <h1 className='bolded text-3xl xsm:text-5xl'>NUESTROS CLIENTES FELICES</h1>
       <div className="overflow-hidden mt-10" ref={ref}>
       <motion.div
           drag='x'

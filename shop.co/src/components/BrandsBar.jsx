@@ -9,9 +9,9 @@ export default function BrandsBar() {
       controls.start({x:0,opacity:1})
     }
   },[inView])
-  const color = 'white';
+  const color = '#0b0b0b';
   return (
-    <div ref={ref} className='bg-black flex p-6 gap-5 justify-center items-center flex-wrap'>
+    <div ref={ref} className='flex p-6 gap-5 justify-center items-center flex-wrap page-cream'>
       <motion.svg
         initial={{x:-100,opacity:0}}
         animate={controls}

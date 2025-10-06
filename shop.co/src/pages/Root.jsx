@@ -8,7 +8,7 @@ import LayoutHolder from '../components/LayoutHolder'
 
 export default function Root() {
   return (
-    <div className='bg-whgite'>
+    <div className='page-cream'>
       <SideNavContext>
         <CartContext>
           <TopHeader/>
