@@ -47,17 +47,17 @@ export default function Home({to = ''}) {
         <div className="nav:w-1/2 flex flex-col flex-grow">
           
             <h1 className="bolded text-3xl sm:text-6xl mb-10 max-w-[550px]">
-            <Reavel>FIND CLOTHES</Reavel> <Reavel>THAT MATCHES</Reavel> <Reavel>YOUR STYLE</Reavel>
+            <Reavel>DESCUBRE SABORES</Reavel> <Reavel>RECIÉN HORNEADOS</Reavel> <Reavel>DE MAXIPAN</Reavel>
             </h1>
           
           <Reavel>
             <p className="max-w-[550px]">
-            Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+            Panes crujientes, pasteles artesanales y delicias dulces inspiradas en Peter Pan 24H, con una experiencia moderna y rápida.
             </p>
           </Reavel>
           <div className='mt-10'></div>
           <Reavel className='btnReavel flex' btn='w-full lg:w-fit'>
-            <Link className="btn w-full lg:w-fit text-center" to='Shop'>Shop Now</Link>
+            <Link className="btn w-full lg:w-fit text-center" to='Shop'>Comprar ahora</Link>
           </Reavel>
           <div className='mb-10'></div>
           <div className="flex mb-10 flex-wrap justify-start items-center gap-10">
@@ -66,7 +66,7 @@ export default function Home({to = ''}) {
                 <h1 className="font-bold text-3xl tracking-wide">200+</h1>
               </Reavel>
               <Reavel>
-                <p>International Brands</p>
+                <p>Recetas tradicionales</p>
               </Reavel>
             </div>
             <div className="flex-grow flex flex-col justify-center items-center">
@@ -74,7 +74,7 @@ export default function Home({to = ''}) {
                 <h1 className="font-bold text-3xl tracking-wide">2,000+</h1>
               </Reavel>
               <Reavel>
-                <p>High-Quality Products</p>
+                <p>Panes y pasteles diarios</p>
               </Reavel>
             </div>
             <div className="flex-grow flex flex-col justify-center items-center">
@@ -82,7 +82,7 @@ export default function Home({to = ''}) {
                 <h1 className="font-bold text-3xl tracking-wide">30,000+</h1>
               </Reavel>
               <Reavel>
-                <p>Happy Customers</p>
+                <p>Clientes felices</p>
               </Reavel>
             </div>
           </div>
@@ -101,13 +101,13 @@ export default function Home({to = ''}) {
       </div>
       <BrandsBar />
       <div ref={NewArrival}>
-        <HomeSliders text='NEW ARRIVALS' type='newarrival' />
+        <HomeSliders text='NOVEDADES' type='newarrival' />
       </div>
       <div ref={TopSelling}>
-        <HomeSliders text='TOP SELLING' type='topselling' />
+        <HomeSliders text='MÁS VENDIDOS' type='topselling' />
       </div>
       <div ref={OnSale}>
-        <HomeSliders text='ON SALE' type='onsale' />
+        <HomeSliders text='EN OFERTA' type='onsale' />
       </div>
       <HappyCustomers />
     </>

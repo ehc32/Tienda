@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --mxp-bg:#0b0b0b;        /* near-black */
+  --mxp-cream:#fff2e5;     /* bakery cream */
+  --mxp-accent:#c06e35;    /* caramel/coffee */
+  --mxp-accent-2:#8a3d1c;  /* dark caramel */
+}
+
 ::-moz-selection { /* Code for Firefox */
   color: white;
-  background: black;
+  background: var(--mxp-bg);
 }
 
 ::selection {
   color: white;
-  background: black;
+  background: var(--mxp-bg);
 }
 
 /* width */
@@ -40,8 +47,14 @@
   @apply hover:underline underline-offset-4 cursor-pointer;
 }
 .btn{
-  @apply bg-black text-white py-3 px-16 rounded-3xl;
+  @apply text-white py-3 px-16 rounded-3xl;
+  background: linear-gradient(135deg,var(--mxp-accent),var(--mxp-accent-2));
 }
+.btn:hover{ filter: brightness(1.05); }
+
+.page-cream{ background-color: var(--mxp-cream); }
+.text-accent{ color: var(--mxp-accent); }
+.bg-accent{ background-color: var(--mxp-accent); }
 .btnReavel{
   @apply w-full lg:w-fit;
 }
@@ -70,7 +83,7 @@
   top:0;
   height: 100%;
   border-radius: 50px;
-  background-color: black;
+  background-color: var(--mxp-bg);
 }
 .example-track.example-track-2{
   position: absolute;
@@ -95,7 +108,7 @@
   touch-action: none;
   z-index: 1;
   left: 0px;
-  background-color: black;
+  background-color: var(--mxp-bg);
   color: white;
   border-radius: 100%;
 }
@@ -104,7 +117,7 @@
   touch-action: none;
   z-index: 2;
   left: 450px;
-  background-color: black;
+  background-color: var(--mxp-bg);
   color: white;
   border-radius: 100%;
 }

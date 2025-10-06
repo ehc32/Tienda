@@ -15,9 +15,9 @@ export default function Shop() {
   return (
     <div>
       <div className='flex mainMargin items-center gap-4'>
-        <Link to='/' className='text-gray-400'>Home</Link>
+        <Link to='/' className='text-gray-400'>Inicio</Link>
         <IoIosArrowForward color='gray'/>
-        <p className=''>Shop</p>
+        <p className=''>Tienda</p>
       </div>
       <ShowProductsByType MyProducts={MyProducts} setMyProducts={setMyProducts} />
     </div>

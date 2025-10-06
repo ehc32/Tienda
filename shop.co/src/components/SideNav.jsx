@@ -33,17 +33,17 @@ export default function SideNav() {
       </svg>
       <div className="">
         <ul className="flex flex-col gap-10 mt-10">
-            <li><Link className="Links" to='/Shop'>Shop</Link></li>
-            <li><Link className="Links" to='/NewArrival'>New Arrivals</Link></li>
-            <li><Link className="Links" to='/TopSelling'>Top Selling</Link></li>
-            <li><Link className="Links" to='/OnSale'>On Sale</Link></li>
+            <li><Link className="Links" to='/Shop'>Tienda</Link></li>
+            <li><Link className="Links" to='/NewArrival'>Novedades</Link></li>
+            <li><Link className="Links" to='/TopSelling'>Más vendidos</Link></li>
+            <li><Link className="Links" to='/OnSale'>En oferta</Link></li>
           <form className="flex gap-2" onSubmit={handleFormSubmit}>
             <button type="submit">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
             </button>
-            <input ref={search} className="p-1 outline-none w-full bg-transparent" type="text" placeholder="Search for products..." />
+            <input ref={search} className="p-1 outline-none w-full bg-transparent" type="text" placeholder="Buscar pan, pasteles, empanadas..." />
           </form>
         </ul>
       </div>

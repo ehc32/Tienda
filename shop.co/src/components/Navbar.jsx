@@ -44,14 +44,14 @@ export default function Navbar() {
           <motion.nav
           className=" bg-white w-full mainPadding py-4 flex items-center nav:gap-12 gap-0 justify-between ">
             <motion.span initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}>
-              <Link className="text-2xl xsm:text-4xl font-bold bolded" to=''>SHOP.CO</Link>
+              <Link className="text-2xl xsm:text-4xl font-bold bolded" to=''>MAXIPAN</Link>
             </motion.span>
             <div className="hidden nav:block mt-3">
               <ul className="flex gap-5">
-              <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/Shop'>Shop</Link></motion.li>
-            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/NewArrival'>New Arrivals</Link></motion.li>
-            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/TopSelling'>Top Selling</Link></motion.li>
-            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/OnSale'>On Sale</Link></motion.li>
+              <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/Shop'>Tienda</Link></motion.li>
+            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/NewArrival'>Novedades</Link></motion.li>
+            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/TopSelling'>Más vendidos</Link></motion.li>
+            <motion.li initial={{opacity:0,y:100}} animate={{opacity:1,y:0}}><Link className="Links" to='/OnSale'>En oferta</Link></motion.li>
               </ul>
             </div>
             
@@ -64,7 +64,7 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
                 </button>
-                <input ref={search} className="p-1 outline-none w-full bg-transparent" type="text" placeholder="Search for products..." />
+                <input ref={search} aria-label="Buscar en Maxipan" className="p-1 outline-none w-full bg-transparent" type="text" placeholder="Buscar pan, pasteles, empanadas..." />
               </motion.form>
             </div>
 

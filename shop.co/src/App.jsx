@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Home from "./pages/Home"
+import { lazy, Suspense } from 'react'
 import Error from "./pages/Error"
 import Root from "./pages/Root"
-import Shop from "./pages/Shop"
-import Cart from "./pages/Cart"
-import Prodcut from "./pages/Prodcut"
 import { motion } from "framer-motion"
+
+const Home = lazy(()=>import('./pages/Home'))
+const Shop = lazy(()=>import('./pages/Shop'))
+const Cart = lazy(()=>import('./pages/Cart'))
+const Prodcut = lazy(()=>import('./pages/Prodcut'))
 
 const router = createBrowserRouter([
   {
@@ -13,13 +15,13 @@ const router = createBrowserRouter([
     element: <Root/>, 
     errorElement:<Error/>,
     children: [
-      {path: "", element: <Home/>},
-      {path: "Shop", element: <Shop/>},
-      {path: "Cart", element: <Cart/>},
-      {path: "Shop/:name", element: <Prodcut/>},
-      {path: "NewArrival", element: <Home to='NewArrival'/>},
-      {path: "TopSelling", element: <Home to='TopSelling'/>},
-      {path: "OnSale", element: <Home to='OnSale'/>},
+      {path: "", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Home/></Suspense>},
+      {path: "Shop", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Shop/></Suspense>},
+      {path: "Cart", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Cart/></Suspense>},
+      {path: "Shop/:name", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Prodcut/></Suspense>},
+      {path: "NewArrival", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Home to='NewArrival'/></Suspense>},
+      {path: "TopSelling", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Home to='TopSelling'/></Suspense>},
+      {path: "OnSale", element: <Suspense fallback={<div className='mainMargin'>Cargando…</div>}><Home to='OnSale'/></Suspense>},
     ]
   },
 ]);
