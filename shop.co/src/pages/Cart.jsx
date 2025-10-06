@@ -26,11 +26,9 @@ export default function Cart() {
 
   const handlePromoCode = (e)=>{
     e.preventDefault();
-    if(DiscountRef.current.value === 'Moemen'){
+    const code = (DiscountRef.current.value || '').trim().toUpperCase();
+    if(code === 'MAXIPAN'){
       setDiscount(20)
-      setCorrectDiscount(true)
-    }else if(DiscountRef.current.value === 'MeMo'){
-      setDiscount(100)
       setCorrectDiscount(true)
     }else{
       setDiscount(0)

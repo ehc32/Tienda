@@ -7,9 +7,9 @@ export default function Page404() {
   return (
     <div className="mainMargin flex-col-reverse lg:flex-row flex items-center">
     <div className="text-center flex flex-col items-center gap-5">
-      <Reavel><h1 className="bolded text-4xl xsm:text-5xl">Somthing went wrong</h1></Reavel>
-      <Reavel><p>We cant seem to find page you are looking for</p></Reavel>
-      <Reavel className="p-4"><Link className="btn w-fit" to='/'>Back to home</Link></Reavel>
+      <Reavel><h1 className="bolded text-4xl xsm:text-5xl">Algo salió mal</h1></Reavel>
+      <Reavel><p>No encontramos la página que buscas</p></Reavel>
+      <Reavel className="p-4"><Link className="btn w-fit" to='/'>Volver al inicio</Link></Reavel>
     </div>
       <motion.div
         initial={{opacity:0, y:75}}
